@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,77 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gur-hI-uYt">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23E-Q8-qh1" userLabel="Top Toolbar">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="action" id="scx-8G-jdF"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="acA-mI-yoW"/>
+                                            <barButtonItem style="plain" systemItem="cancel" id="7AQ-Ze-lsy"/>
+                                        </items>
+                                    </toolbar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGH-ia-BZA" userLabel="Editor Container View">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="492"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChD-Qm-4la" userLabel="Bottom Textfield">
+                                                <rect key="frame" x="201" y="419" width="198" height="53"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6OM-lI-SOW" userLabel="Top Textfield">
+                                                <rect key="frame" x="253" y="20" width="95" height="53"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ChD-Qm-4la" secondAttribute="bottom" constant="20" id="4XG-Z0-ysl"/>
+                                            <constraint firstItem="6OM-lI-SOW" firstAttribute="top" secondItem="pGH-ia-BZA" secondAttribute="top" constant="20" id="AYw-lQ-aXY"/>
+                                            <constraint firstItem="ChD-Qm-4la" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="Bge-7m-Idz"/>
+                                            <constraint firstItem="6OM-lI-SOW" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="ws9-yZ-h1w"/>
+                                        </constraints>
+                                    </view>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-gv-ty3" userLabel="Bottom Toolbar">
+                                        <rect key="frame" x="0.0" y="536" width="600" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="w0k-k9-lGu"/>
+                                            <barButtonItem style="plain" systemItem="camera" id="Aj4-bI-XON"/>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="1I0-KZ-Z7h"/>
+                                            <barButtonItem title="Album" id="6hv-mo-nnZ"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="utu-al-0NB"/>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gur-hI-uYt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="E1k-S1-NDm"/>
+                            <constraint firstItem="Gur-hI-uYt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="EbN-8A-OI7"/>
+                            <constraint firstAttribute="trailing" secondItem="Gur-hI-uYt" secondAttribute="trailing" id="aGJ-1f-ezr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gur-hI-uYt" secondAttribute="bottom" constant="-16" id="r35-X1-JdY"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Gur-hI-uYt" secondAttribute="bottom" id="zSf-di-gIe"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="r35-X1-JdY"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="ChD-Qm-4la" id="LzF-hk-qfT"/>
+                        <outlet property="bottomToolbar" destination="iHp-gv-ty3" id="ril-RV-FdU"/>
+                        <outlet property="topTextField" destination="6OM-lI-SOW" id="deo-rx-d28"/>
+                        <outlet property="topToolbar" destination="23E-Q8-qh1" id="1gd-RP-F9Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="230" y="367"/>
         </scene>
     </scenes>
 </document>

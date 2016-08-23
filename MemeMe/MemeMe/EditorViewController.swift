@@ -8,7 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EditorViewController: UIViewController {
+
+    // MARK: Editor Properties
+    
+    @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
+
+    @IBOutlet weak var topTextField: UITextField!
+
+    @IBOutlet weak var bottomTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
