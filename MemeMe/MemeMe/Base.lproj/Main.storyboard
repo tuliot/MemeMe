@@ -23,7 +23,9 @@
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23E-Q8-qh1" userLabel="Top Toolbar">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <items>
-                                            <barButtonItem title="Item" id="xxv-Io-aX5"/>
+                                            <barButtonItem style="plain" systemItem="action" id="scx-8G-jdF"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="acA-mI-yoW"/>
+                                            <barButtonItem style="plain" systemItem="cancel" id="7AQ-Ze-lsy"/>
                                         </items>
                                     </toolbar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGH-ia-BZA" userLabel="Editor Container View">
@@ -51,7 +53,11 @@
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-gv-ty3" userLabel="Bottom Toolbar">
                                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                         <items>
-                                            <barButtonItem title="Item" id="6hv-mo-nnZ"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="w0k-k9-lGu"/>
+                                            <barButtonItem style="plain" systemItem="camera" id="Aj4-bI-XON"/>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="1I0-KZ-Z7h"/>
+                                            <barButtonItem title="Album" id="6hv-mo-nnZ"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="utu-al-0NB"/>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -74,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="240" y="360"/>
+            <point key="canvasLocation" x="229" y="364"/>
         </scene>
     </scenes>
 </document>
