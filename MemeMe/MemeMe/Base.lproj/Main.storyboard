@@ -42,12 +42,19 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eMz-CG-ltx" userLabel="Meme Imageview">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="ChD-Qm-4la" secondAttribute="bottom" constant="20" id="4XG-Z0-ysl"/>
+                                            <constraint firstItem="eMz-CG-ltx" firstAttribute="leading" secondItem="pGH-ia-BZA" secondAttribute="leading" id="AJB-fb-bAP"/>
                                             <constraint firstItem="6OM-lI-SOW" firstAttribute="top" secondItem="pGH-ia-BZA" secondAttribute="top" constant="20" id="AYw-lQ-aXY"/>
                                             <constraint firstItem="ChD-Qm-4la" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="Bge-7m-Idz"/>
+                                            <constraint firstAttribute="trailing" secondItem="eMz-CG-ltx" secondAttribute="trailing" id="UvH-Hm-OQs"/>
+                                            <constraint firstAttribute="bottom" secondItem="eMz-CG-ltx" secondAttribute="bottom" id="hSX-I5-8Ef"/>
+                                            <constraint firstItem="eMz-CG-ltx" firstAttribute="top" secondItem="pGH-ia-BZA" secondAttribute="top" id="jKo-T8-LlO"/>
                                             <constraint firstItem="6OM-lI-SOW" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="ws9-yZ-h1w"/>
                                         </constraints>
                                     </view>
@@ -81,6 +88,7 @@
                     <connections>
                         <outlet property="bottomTextField" destination="ChD-Qm-4la" id="LzF-hk-qfT"/>
                         <outlet property="bottomToolbar" destination="iHp-gv-ty3" id="ril-RV-FdU"/>
+                        <outlet property="imageView" destination="eMz-CG-ltx" id="kbq-mY-Omc"/>
                         <outlet property="topTextField" destination="6OM-lI-SOW" id="deo-rx-d28"/>
                         <outlet property="topToolbar" destination="23E-Q8-qh1" id="1gd-RP-F9Y"/>
                     </connections>
