@@ -20,21 +20,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gur-hI-uYt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23E-Q8-qh1">
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23E-Q8-qh1" userLabel="Top Toolbar">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <items>
                                             <barButtonItem title="Item" id="xxv-Io-aX5"/>
                                         </items>
                                     </toolbar>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGH-ia-BZA">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGH-ia-BZA" userLabel="Editor Container View">
                                         <rect key="frame" x="0.0" y="44" width="600" height="512"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6OM-lI-SOW">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6OM-lI-SOW" userLabel="Top Textfield">
                                                 <rect key="frame" x="276" y="20" width="49" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChD-Qm-4la">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChD-Qm-4la" userLabel="Bottom Textfield">
                                                 <rect key="frame" x="260" y="462" width="80" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -48,7 +48,7 @@
                                             <constraint firstItem="6OM-lI-SOW" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="ws9-yZ-h1w"/>
                                         </constraints>
                                     </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-gv-ty3">
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-gv-ty3" userLabel="Bottom Toolbar">
                                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                         <items>
                                             <barButtonItem title="Item" id="6hv-mo-nnZ"/>
@@ -65,6 +65,12 @@
                             <constraint firstItem="Gur-hI-uYt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kRe-Bb-Gpf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="ChD-Qm-4la" id="LzF-hk-qfT"/>
+                        <outlet property="bottomToolbar" destination="iHp-gv-ty3" id="ril-RV-FdU"/>
+                        <outlet property="topTextField" destination="6OM-lI-SOW" id="deo-rx-d28"/>
+                        <outlet property="topToolbar" destination="23E-Q8-qh1" id="1gd-RP-F9Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
