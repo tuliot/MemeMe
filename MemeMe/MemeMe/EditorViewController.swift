@@ -32,6 +32,13 @@ class EditorViewController: UIViewController {
         }
 
         createTapRecognizerForKeyboardDismiss()
+
+        // Auto caps on the textfields
+        topTextField.autocapitalizationType = .AllCharacters
+        bottomTextField.autocapitalizationType = .AllCharacters
+
+        topTextField.delegate = self
+        bottomTextField.delegate = self
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -211,6 +218,16 @@ extension EditorViewController: UIImagePickerControllerDelegate {
 }
 
 extension EditorViewController: UINavigationControllerDelegate {
+
+}
+
+extension EditorViewController: UITextFieldDelegate {
+
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        // We want to remove all text when the user taps on the textfield
+        textField.text = ""
+        return true
+    }
 
 }
 
