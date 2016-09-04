@@ -204,8 +204,16 @@ class EditorViewController: UIViewController {
         }
     }
 
-    @IBAction func tappedCancelButton(sender: UIBarButtonItem) {
+    /**
+     Causes the Meme Editor View to return to its launch state, 
+     displaying no image and default text.
 
+     - parameter sender: UIBarButtonItem
+     */
+    @IBAction func tappedCancelButton(sender: UIBarButtonItem) {
+        topTextField.text = ""
+        bottomTextField.text = ""
+        imageView.image = nil
     }
     
 }
