@@ -23,6 +23,8 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var editorContainer: UIView!
 
+    var pickerController: UIImagePickerController? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,6 +48,7 @@ class EditorViewController: UIViewController {
         topTextField.textAlignment = .Center
         bottomTextField.textAlignment = .Center
 
+        pickerController = UIImagePickerController()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -82,8 +85,16 @@ class EditorViewController: UIViewController {
      */
     func presentPickerWithSource(sourceType: UIImagePickerControllerSourceType) {
 
-        // Init picker controller
-        let pickerController = UIImagePickerController()
+        var pickerController: UIImagePickerController
+
+        // Init picker controller, if necessary
+        if let p = self.pickerController {
+            pickerController = p
+        } else {
+            pickerController = UIImagePickerController()
+            self.pickerController = pickerController
+        }
+
         pickerController.allowsEditing = true
         pickerController.delegate = self
         pickerController.sourceType = sourceType
@@ -130,6 +141,18 @@ class EditorViewController: UIViewController {
         self.view.endEditing(true)
     }
 
+    /**
+     Shows/Hides the top and bottom toolbars
+
+     - parameter shouldShow: Bool true if should show, false if should hide
+     */
+    func toggleToolbars(shouldShow: Bool) {
+
+        topToolbar.hidden = !shouldShow
+        bottomToolbar.hidden = !shouldShow
+
+    }
+
     // MARK: Notification handlers
 
     /**
@@ -146,6 +169,8 @@ class EditorViewController: UIViewController {
 
         // Move view up
         self.view.frame.origin.y -= self.getKeyboardHeight(notification)
+
+        toggleToolbars(false)
     }
 
     /**
@@ -157,6 +182,7 @@ class EditorViewController: UIViewController {
     func keyboardWillHide(notification: NSNotification) {
         // Move view down
         self.view.frame.origin.y = 0
+        toggleToolbars(true)
     }
 
     func orientationChanged(notification: NSNotification) {
