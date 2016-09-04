@@ -235,5 +235,10 @@ extension EditorViewController: UITextFieldDelegate {
         textField.text = ""
         return true
     }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return true
+    }
 }
 
