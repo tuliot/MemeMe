@@ -39,6 +39,13 @@ class EditorViewController: UIViewController {
 
         topTextField.delegate = self
         bottomTextField.delegate = self
+
+        topTextField.defaultTextAttributes = NSAttributedString.memeAttributes()
+        bottomTextField.defaultTextAttributes = NSAttributedString.memeAttributes()
+
+        topTextField.textAlignment = .Center
+        bottomTextField.textAlignment = .Center
+
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -228,6 +235,5 @@ extension EditorViewController: UITextFieldDelegate {
         textField.text = ""
         return true
     }
-
 }
 
