@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Configure Firebase
         FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
 
+        var myRootRef = FIRDatabase.database().reference()
+        myRootRef.observeEventType(.Value) { (snapshot) in
+            print("\(snapshot.key) -> \(snapshot.value)")
+        }
         return true
     }
 
