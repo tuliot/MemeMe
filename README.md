@@ -3,7 +3,7 @@
 ## What is Meme Me?
 Meme Me is a fun iOS app that allows you to create and share memes.
 
-![](https://cloud.githubusercontent.com/assets/5385681/18231484/d627a9b6-7288-11e6-86b2-3b7d4f0a409c.PNG)
+![](https://cloud.githubusercontent.com/assets/5385681/18408740/dbd6f872-7705-11e6-8ca6-97cf2aca0c2f.PNG)
 ![](https://cloud.githubusercontent.com/assets/5385681/18228289/09830224-7216-11e6-9972-9628f913f609.png)
 
 
