@@ -9,4 +9,7 @@ target 'MemeMe' do
   #pod 'Firebase', '~> 3.5'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
 end
+
