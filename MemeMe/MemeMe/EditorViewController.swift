@@ -23,6 +23,8 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var editorContainer: UIView!
 
+    @IBOutlet weak var scrollView: UIScrollView!
+
     var pickerController: UIImagePickerController? = nil
 
     override func viewDidLoad() {
@@ -49,6 +51,14 @@ class EditorViewController: UIViewController {
         bottomTextField.textAlignment = .Center
 
         pickerController = UIImagePickerController()
+
+        // Add border around editor container
+        editorContainer.layer.borderWidth = 2
+        editorContainer.layer.borderColor = UIColor.whiteColor().CGColor
+
+        scrollView.minimumZoomScale=0.5
+        scrollView.maximumZoomScale=6.0
+        scrollView.delegate = self
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -127,12 +137,19 @@ class EditorViewController: UIViewController {
      */
     func generateMemedImage(view: UIView) -> UIImage
     {
+
+        // Remove any borders
+        let borderWidth = view.layer.borderWidth
+        view.layer.borderWidth = 0
+
         // Render view to an image
         UIGraphicsBeginImageContext(view.frame.size)
-        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: false)
+        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()       
-        
+        UIGraphicsEndImageContext()
+
+        view.layer.borderWidth = borderWidth
+
         return memedImage
     }
 
@@ -278,6 +295,14 @@ extension EditorViewController: PopularMemePickerDelegate {
         print("Picked meme \(meme)")
         imageView.image = meme.image
     }
+}
+
+extension EditorViewController: UIScrollViewDelegate {
+
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return self.imageView
+    }
+
 }
 
 extension EditorViewController: UINavigationControllerDelegate {
