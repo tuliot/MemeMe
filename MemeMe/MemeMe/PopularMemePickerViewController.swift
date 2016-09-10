@@ -63,7 +63,7 @@ class PopularMemePickerViewController: UICollectionViewController {
 
                             if let downloadedImage: UIImage = UIImage(data: data!) {
 
-                                self.availableMemes.append(Meme(name: obj.objectForKey("display-name") as? String, image: downloadedImage, topText: "", bottomText: ""))
+                                self.availableMemes.append(Meme(name: obj.objectForKey("display-name") as? String, image: downloadedImage, topText: "", bottomText: "", memedImage: nil))
                                     
                                 self.collectionView?.reloadData()
                             }
