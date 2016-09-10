@@ -25,6 +25,7 @@ class EditorViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
 
+    @IBOutlet weak var tinyTopView: UIView!
     var pickerController: UIImagePickerController? = nil
 
     override func viewDidLoad() {
@@ -164,10 +165,11 @@ class EditorViewController: UIViewController {
      - parameter shouldShow: Bool true if should show, false if should hide
      */
     func toggleToolbars(shouldShow: Bool) {
-
+        tinyTopView.hidden = !shouldShow
+        topToolbar.userInteractionEnabled = !shouldShow
         topToolbar.hidden = !shouldShow
+        bottomToolbar.userInteractionEnabled = !shouldShow
         bottomToolbar.hidden = !shouldShow
-
     }
 
     // MARK: Notification handlers
@@ -184,8 +186,24 @@ class EditorViewController: UIViewController {
             return
         }
 
+        var dy = -self.getKeyboardHeight(notification)
+
+        // Make sure that we're not going to hide the responder
+        var editingView: UIView? = nil
+
+        if topTextField.editing {
+            editingView = topTextField
+        }
+
+        if let f = editingView {
+            let convertedOrigin = f.convertPoint(f.frame.origin, toView: view)
+            if convertedOrigin.y + dy < 0 {
+                dy = -convertedOrigin.y + 20
+            }
+        }
+
         // Move view up
-        self.view.frame.origin.y -= self.getKeyboardHeight(notification)
+        self.view.frame.origin.y += dy
 
         toggleToolbars(false)
     }

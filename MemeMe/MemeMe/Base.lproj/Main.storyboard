@@ -266,6 +266,7 @@
                         <outlet property="editorContainer" destination="pGH-ia-BZA" id="yP7-RR-fGa"/>
                         <outlet property="imageView" destination="eMz-CG-ltx" id="kbq-mY-Omc"/>
                         <outlet property="scrollView" destination="L6b-ts-V5Q" id="KWy-Ha-lDS"/>
+                        <outlet property="tinyTopView" destination="ay1-P3-XqK" id="ZG8-re-Yt3"/>
                         <outlet property="topTextField" destination="6OM-lI-SOW" id="deo-rx-d28"/>
                         <outlet property="topToolbar" destination="23E-Q8-qh1" id="1gd-RP-F9Y"/>
                     </connections>
