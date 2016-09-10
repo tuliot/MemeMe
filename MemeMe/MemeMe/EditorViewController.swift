@@ -23,6 +23,8 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var editorContainer: UIView!
 
+    @IBOutlet weak var scrollView: UIScrollView!
+
     var pickerController: UIImagePickerController? = nil
 
     override func viewDidLoad() {
@@ -53,6 +55,10 @@ class EditorViewController: UIViewController {
         // Add border around editor container
         editorContainer.layer.borderWidth = 2
         editorContainer.layer.borderColor = UIColor.whiteColor().CGColor
+
+        scrollView.minimumZoomScale=0.5;
+        scrollView.maximumZoomScale=6.0;
+        scrollView.delegate = self
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -289,6 +295,14 @@ extension EditorViewController: PopularMemePickerDelegate {
         print("Picked meme \(meme)")
         imageView.image = meme.image
     }
+}
+
+extension EditorViewController: UIScrollViewDelegate {
+
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return self.imageView
+    }
+
 }
 
 extension EditorViewController: UINavigationControllerDelegate {
