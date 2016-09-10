@@ -14,6 +14,7 @@ struct Meme {
     var image: UIImage
     var topText: String?
     var bottomText: String?
+    var memedImage: UIImage?
 }
 
 extension Meme: CustomStringConvertible {
