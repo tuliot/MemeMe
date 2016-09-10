@@ -97,14 +97,36 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pGH-ia-BZA" userLabel="Editor Container View">
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMz-CG-ltx" userLabel="Meme Imageview"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6b-ts-V5Q">
+                                                <rect key="frame" x="-120" y="-64" width="240" height="128"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMz-CG-ltx" userLabel="Meme Imageview">
+                                                        <rect key="frame" x="120" y="64" width="0.0" height="0.0"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="eMz-CG-ltx" firstAttribute="height" secondItem="L6b-ts-V5Q" secondAttribute="height" id="FZd-OR-ERf"/>
+                                                    <constraint firstItem="eMz-CG-ltx" firstAttribute="width" secondItem="L6b-ts-V5Q" secondAttribute="width" id="Fkm-pg-S1U"/>
+                                                    <constraint firstItem="eMz-CG-ltx" firstAttribute="centerX" secondItem="L6b-ts-V5Q" secondAttribute="centerX" id="PyS-Ws-gqO"/>
+                                                    <constraint firstAttribute="width" secondItem="L6b-ts-V5Q" secondAttribute="height" multiplier="16:9" id="gXQ-Qk-ydG"/>
+                                                    <constraint firstItem="eMz-CG-ltx" firstAttribute="centerY" secondItem="L6b-ts-V5Q" secondAttribute="centerY" id="wtC-Ma-PS9"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="gXQ-Qk-ydG"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact" ambiguous="YES">
+                                                    <rect key="frame" x="40" y="0.0" width="520" height="292"/>
+                                                    <mask key="constraints">
+                                                        <include reference="gXQ-Qk-ydG"/>
+                                                    </mask>
+                                                </variation>
+                                            </scrollView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" placeholder="TOP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6OM-lI-SOW" userLabel="Top Textfield">
                                                 <rect key="frame" x="-47" y="10" width="95" height="53"/>
                                                 <attributedString key="attributedText"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                <variation key="heightClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="1" y="10" width="600" height="53"/>
-                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="1" y="10" width="400" height="54"/>
                                                 </variation>
@@ -113,9 +135,6 @@
                                                 <rect key="frame" x="-99" y="-63" width="198" height="53"/>
                                                 <attributedString key="attributedText"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                <variation key="heightClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="229" width="600" height="53"/>
-                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="336" width="400" height="54"/>
                                                 </variation>
@@ -125,31 +144,51 @@
                                         <constraints>
                                             <constraint firstItem="ChD-Qm-4la" firstAttribute="width" secondItem="pGH-ia-BZA" secondAttribute="width" id="1Lp-6Q-tqb"/>
                                             <constraint firstItem="ChD-Qm-4la" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="1mu-mo-kxV"/>
+                                            <constraint firstItem="L6b-ts-V5Q" firstAttribute="height" secondItem="pGH-ia-BZA" secondAttribute="height" id="2A4-Fu-Xxy"/>
                                             <constraint firstAttribute="bottom" secondItem="ChD-Qm-4la" secondAttribute="bottom" constant="10" id="37V-lh-Rdf"/>
-                                            <constraint firstItem="eMz-CG-ltx" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="7ge-uH-1U2"/>
+                                            <constraint firstItem="L6b-ts-V5Q" firstAttribute="height" secondItem="pGH-ia-BZA" secondAttribute="height" id="8eW-wd-82g"/>
                                             <constraint firstAttribute="width" secondItem="pGH-ia-BZA" secondAttribute="height" multiplier="1:1" id="BBq-pp-l0w"/>
-                                            <constraint firstItem="eMz-CG-ltx" firstAttribute="width" secondItem="pGH-ia-BZA" secondAttribute="width" id="HR7-ka-Eof"/>
-                                            <constraint firstItem="eMz-CG-ltx" firstAttribute="height" secondItem="pGH-ia-BZA" secondAttribute="height" id="Roh-hs-4A8"/>
-                                            <constraint firstItem="eMz-CG-ltx" firstAttribute="centerY" secondItem="pGH-ia-BZA" secondAttribute="centerY" id="bfL-Ob-ggg"/>
+                                            <constraint firstItem="L6b-ts-V5Q" firstAttribute="width" secondItem="pGH-ia-BZA" secondAttribute="width" id="CJP-yj-bgl"/>
+                                            <constraint firstItem="L6b-ts-V5Q" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="D0S-fh-ewR"/>
+                                            <constraint firstItem="L6b-ts-V5Q" firstAttribute="centerY" secondItem="pGH-ia-BZA" secondAttribute="centerY" id="Nuw-Jb-OqE"/>
+                                            <constraint firstItem="L6b-ts-V5Q" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="iOM-oB-vCI"/>
                                             <constraint firstItem="6OM-lI-SOW" firstAttribute="top" secondItem="pGH-ia-BZA" secondAttribute="top" constant="10" id="ker-3w-hhF"/>
                                             <constraint firstAttribute="width" secondItem="pGH-ia-BZA" secondAttribute="height" multiplier="16:9" id="lZY-jn-Ly3"/>
+                                            <constraint firstItem="L6b-ts-V5Q" firstAttribute="centerY" secondItem="pGH-ia-BZA" secondAttribute="centerY" id="mtL-zW-cDv"/>
                                             <constraint firstItem="6OM-lI-SOW" firstAttribute="centerX" secondItem="pGH-ia-BZA" secondAttribute="centerX" id="olN-j0-FrU"/>
                                             <constraint firstItem="6OM-lI-SOW" firstAttribute="width" secondItem="pGH-ia-BZA" secondAttribute="width" id="u7x-TQ-wfn"/>
+                                            <constraint firstItem="L6b-ts-V5Q" firstAttribute="width" secondItem="pGH-ia-BZA" secondAttribute="width" id="ubt-d8-Fw9"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="BBq-pp-l0w"/>
                                                 <exclude reference="lZY-jn-Ly3"/>
+                                                <exclude reference="2A4-Fu-Xxy"/>
+                                                <exclude reference="8eW-wd-82g"/>
+                                                <exclude reference="CJP-yj-bgl"/>
+                                                <exclude reference="D0S-fh-ewR"/>
+                                                <exclude reference="Nuw-Jb-OqE"/>
+                                                <exclude reference="iOM-oB-vCI"/>
+                                                <exclude reference="mtL-zW-cDv"/>
+                                                <exclude reference="ubt-d8-Fw9"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="lZY-jn-Ly3"/>
+                                                <include reference="2A4-Fu-Xxy"/>
+                                                <include reference="D0S-fh-ewR"/>
+                                                <include reference="mtL-zW-cDv"/>
+                                                <exclude reference="ubt-d8-Fw9"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="BBq-pp-l0w"/>
+                                                <include reference="8eW-wd-82g"/>
+                                                <include reference="CJP-yj-bgl"/>
+                                                <include reference="Nuw-Jb-OqE"/>
+                                                <include reference="iOM-oB-vCI"/>
                                             </mask>
                                         </variation>
                                     </view>
