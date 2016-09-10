@@ -134,6 +134,9 @@
                                                 <rect key="frame" x="-47" y="10" width="95" height="53"/>
                                                 <attributedString key="attributedText"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="1" y="10" width="421" height="21"/>
+                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="1" y="10" width="400" height="54"/>
                                                 </variation>
@@ -263,6 +266,7 @@
                     <connections>
                         <outlet property="bottomTextField" destination="ChD-Qm-4la" id="LzF-hk-qfT"/>
                         <outlet property="bottomToolbar" destination="iHp-gv-ty3" id="ril-RV-FdU"/>
+                        <outlet property="cameraButton" destination="Aj4-bI-XON" id="Q0I-Em-HWO"/>
                         <outlet property="editorContainer" destination="pGH-ia-BZA" id="yP7-RR-fGa"/>
                         <outlet property="imageView" destination="eMz-CG-ltx" id="kbq-mY-Omc"/>
                         <outlet property="scrollView" destination="L6b-ts-V5Q" id="KWy-Ha-lDS"/>

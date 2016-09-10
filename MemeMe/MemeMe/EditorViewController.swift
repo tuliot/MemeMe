@@ -10,9 +10,6 @@ import UIKit
 
 class EditorViewController: UIViewController {
 
-    // MARK: Constants
-    let CAMERA_BUTTON_TAG = 11
-
     // MARK: Editor Properties
     @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var bottomToolbar: UIToolbar!
@@ -25,16 +22,12 @@ class EditorViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
 
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var tinyTopView: UIView!
     var pickerController: UIImagePickerController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Make sure that we can use the camera
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) == false {
-            bottomToolbar.viewWithTag(CAMERA_BUTTON_TAG)?.userInteractionEnabled = false
-        }
 
         createTapRecognizerForKeyboardDismiss()
 
@@ -60,6 +53,9 @@ class EditorViewController: UIViewController {
         scrollView.minimumZoomScale=0.5
         scrollView.maximumZoomScale=6.0
         scrollView.delegate = self
+
+        // If camera is not available, disable the camera button
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
 
     override func viewWillAppear(animated: Bool) {
