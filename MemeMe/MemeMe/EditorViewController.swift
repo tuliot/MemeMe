@@ -56,8 +56,8 @@ class EditorViewController: UIViewController {
         editorContainer.layer.borderWidth = 2
         editorContainer.layer.borderColor = UIColor.whiteColor().CGColor
 
-        scrollView.minimumZoomScale=0.5;
-        scrollView.maximumZoomScale=6.0;
+        scrollView.minimumZoomScale=0.5
+        scrollView.maximumZoomScale=6.0
         scrollView.delegate = self
     }
 
