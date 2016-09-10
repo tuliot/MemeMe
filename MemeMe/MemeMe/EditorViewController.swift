@@ -49,6 +49,10 @@ class EditorViewController: UIViewController {
         bottomTextField.textAlignment = .Center
 
         pickerController = UIImagePickerController()
+
+        // Add border around editor container
+        editorContainer.layer.borderWidth = 2
+        editorContainer.layer.borderColor = UIColor.whiteColor().CGColor
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -127,12 +131,19 @@ class EditorViewController: UIViewController {
      */
     func generateMemedImage(view: UIView) -> UIImage
     {
+
+        // Remove any borders
+        let borderWidth = view.layer.borderWidth
+        view.layer.borderWidth = 0
+
         // Render view to an image
         UIGraphicsBeginImageContext(view.frame.size)
-        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: false)
+        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()       
-        
+        UIGraphicsEndImageContext()
+
+        view.layer.borderWidth = borderWidth
+
         return memedImage
     }
 

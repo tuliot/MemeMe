@@ -102,13 +102,16 @@
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMz-CG-ltx" userLabel="Meme Imageview">
                                                         <rect key="frame" x="120" y="64" width="0.0" height="0.0"/>
+                                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="520" height="292"/>
+                                                        </variation>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="eMz-CG-ltx" firstAttribute="height" secondItem="L6b-ts-V5Q" secondAttribute="height" id="FZd-OR-ERf"/>
                                                     <constraint firstItem="eMz-CG-ltx" firstAttribute="width" secondItem="L6b-ts-V5Q" secondAttribute="width" id="Fkm-pg-S1U"/>
                                                     <constraint firstItem="eMz-CG-ltx" firstAttribute="centerX" secondItem="L6b-ts-V5Q" secondAttribute="centerX" id="PyS-Ws-gqO"/>
-                                                    <constraint firstAttribute="width" secondItem="L6b-ts-V5Q" secondAttribute="height" multiplier="16:9" id="gXQ-Qk-ydG"/>
+                                                    <constraint firstAttribute="width" secondItem="L6b-ts-V5Q" secondAttribute="height" multiplier="13:9" id="gXQ-Qk-ydG"/>
                                                     <constraint firstItem="eMz-CG-ltx" firstAttribute="centerY" secondItem="L6b-ts-V5Q" secondAttribute="centerY" id="wtC-Ma-PS9"/>
                                                 </constraints>
                                                 <variation key="default">
@@ -116,10 +119,11 @@
                                                         <exclude reference="gXQ-Qk-ydG"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=compact" ambiguous="YES">
+                                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                                     <rect key="frame" x="40" y="0.0" width="520" height="292"/>
                                                     <mask key="constraints">
                                                         <include reference="gXQ-Qk-ydG"/>
+                                                        <exclude reference="Fkm-pg-S1U"/>
                                                     </mask>
                                                 </variation>
                                             </scrollView>
