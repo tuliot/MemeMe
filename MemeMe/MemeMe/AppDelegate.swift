@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        // Configure Firebase
+        FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
+
+        FIRAuth.auth()?.signInWithEmail("blah@blah.com", password: "top_secret") { (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+
+//        var myRootRef = FIRDatabase.database().reference()
+//        myRootRef.observeEventType(.Value) { (snapshot) in
+//            print("\(snapshot.key) -> \(snapshot.value)")
+//
+//
+//        }
+//
+//        let brianRef = FIRStorage.storage().referenceForURL("gs://meme-me.appspot.com/Leonardo-Cheers.jpg")
+//
+//        brianRef.dataWithMaxSize(4 * 1024 * 1024) { (data, error) -> Void in
+//            if (error != nil) {
+//                // Uh-oh, an error occurred!
+//                print(error)
+//            } else {
+//                // Data for "images/island.jpg" is returned
+//                let leoImage: UIImage! = UIImage(data: data!)
+//                print(leoImage)
+//            }
+//        }
+
         return true
     }
 

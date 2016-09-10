@@ -231,6 +231,21 @@ class EditorViewController: UIViewController {
     }
 
     /**
+     Handles the tapping of the Popular button. This will present
+     a view controller that will allow the user to pick a popular
+     meme image
+
+     - parameter sender: UIBarButtonItem
+     */
+    @IBAction func tappedPopularButton(sender: AnyObject) {
+
+        let vc = PopularMemePickerViewController()
+        vc.delegate = self
+
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+
+    /**
      Causes the Meme Editor View to return to its launch state, 
      displaying no image and default text.
 
@@ -256,6 +271,13 @@ extension EditorViewController: UIImagePickerControllerDelegate {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+}
+
+extension EditorViewController: PopularMemePickerDelegate {
+    func didPickMeme(meme: Meme) {
+        print("Picked meme \(meme)")
+        imageView.image = meme.image
+    }
 }
 
 extension EditorViewController: UINavigationControllerDelegate {

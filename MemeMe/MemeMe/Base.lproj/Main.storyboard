@@ -21,7 +21,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ay1-P3-XqK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="vJv-YV-ckJ"/>
                                 </constraints>
@@ -62,15 +62,21 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w0k-k9-lGu"/>
+                                    <barButtonItem title="Album" id="6hv-mo-nnZ">
+                                        <connections>
+                                            <action selector="tappedAlbumButton:" destination="BYZ-38-t0r" id="Bc5-sM-Zi1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="1I0-KZ-Z7h"/>
                                     <barButtonItem tag="11" style="plain" systemItem="camera" id="Aj4-bI-XON">
                                         <connections>
                                             <action selector="tappedCameraButton:" destination="BYZ-38-t0r" id="lR0-V3-Mi8"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="1I0-KZ-Z7h"/>
-                                    <barButtonItem title="Album" id="6hv-mo-nnZ">
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="X4a-2r-Vpv"/>
+                                    <barButtonItem title="Popular" id="dRH-RA-oys" userLabel="Popular">
                                         <connections>
-                                            <action selector="tappedAlbumButton:" destination="BYZ-38-t0r" id="Bc5-sM-Zi1"/>
+                                            <action selector="tappedPopularButton:" destination="BYZ-38-t0r" id="shL-lB-cOk"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="utu-al-0NB"/>
