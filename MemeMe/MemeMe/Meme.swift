@@ -15,6 +15,11 @@ struct Meme {
     var topText: String?
     var bottomText: String?
     var memedImage: UIImage?
+
+    func save() {
+        // Not sure where we should be saving this to based on reqs. 
+        // I think its Core Data, but it seems out of scope for this project
+    }
 }
 
 extension Meme: CustomStringConvertible {
